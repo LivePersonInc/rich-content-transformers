@@ -1,0 +1,74 @@
+{
+    "type": "vertical",
+    "@type": "card",
+    "elements": [
+        {
+            "type": "image",
+            "url": "https://cdn.macrumors.com/article-new/2017/09/iphonexfrontback-800x573.jpg",
+            "tooltip": "product name (Title)"
+        },
+        {
+            "type": "text",
+            "text": "product name (Title)",
+            "tooltip": "product name (Title)",
+            "style": {
+                "bold": true,
+                "size": "large"
+            }
+        },
+        {
+            "type": "text",
+            "text": "product name (Title)",
+            "tooltip": "product name (Title)"
+        },
+        {
+            "type": "button",
+            "tooltip": "Add to cart",
+            "title": "Add to cart",
+            "click": {
+                "actions": [
+                    {
+                        "type": "link",
+                        "uri": "https://example.com"
+                    },
+                    {
+                        "text": "Add to cart",
+                        "type": "publishText"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "button",
+            "tooltip": "Publish text",
+            "title": "Publish text",
+            "click": {
+                "actions": [
+                    {
+                        "type": "publishText",
+                        "text": "Publish text"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "button",
+            "tooltip": "Navigate",
+            "title": "Navigate",
+            "click": {
+                "actions": [
+                    {
+                        "type": "navigate",
+                        "name": "Navigate to store via image",
+                        "lo": 23423423,
+                        "la": 2423423423
+                    },
+                    {
+                        "text": "Navigate",
+                        "type": "publishText"
+                    }
+                ]
+            }
+        }
+    ]
+}

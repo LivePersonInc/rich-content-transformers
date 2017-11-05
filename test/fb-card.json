@@ -1,0 +1,28 @@
+{
+    "type": "template",
+    "payload": {
+        "template_type": "generic",
+        "elements": [
+            {
+                "image_url": "https://cdn.macrumors.com/article-new/2017/09/iphonexfrontback-800x573.jpg",
+                "title": "product name (Title)",
+                "subtitle": "product name (Title)",
+                "buttons": [
+                    {
+                        "title": "Add to cart",
+                        "type": "web_url",
+                        "url": "https://example.com"
+                    },
+                    {
+                        "title": "Publish text"
+                    },
+                    {
+                        "title": "Navigate",
+                        "type": "postback",
+                        "payload": "{\"type\":\"navigate\",\"name\":\"Navigate to store via image\",\"lo\":23423423,\"la\":2423423423}"
+                    }
+                ]
+            }
+        ]
+    }
+}
