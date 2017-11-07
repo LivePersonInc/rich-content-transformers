@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pollock</title>
+    <script src="./json-pollock.bundle.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<br>
+<div id="container2"></div>
+<script>
+    JsonPollock.init({
+        maxAllowedElements: 50    // max DOM elements that will be rendere, dother elements will be ignored, default is 50.
+    });
+    const card = {
+        "type": "vertical",
+        "elements": [
+            {
+                "type": "image",
+                "url": "https://cdn.macrumors.com/article-new/2017/09/iphonexfrontback-800x573.jpg",
+                "tooltip": "image tooltip",
+                "click": {
+                    "actions": [
+                        {
+                            "type": "navigate",
+                            "name": "Navigate to store via image",
+                            "lo": 23423423,
+                            "la": 2423423423
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "text",
+                "text": "product name (Title)",
+                "tooltip": "text tooltip",
+                "style": {
+                    "bold": true,
+                    "size": "large"
+                }
+            },
+            {
+                "type": "text",
+                "text": "product name (Title)",
+                "tooltip": "text tooltip"
+            },
+            {
+                "type": "button",
+                "tooltip": "button tooltip",
+                "title": "Add to cart",
+                "click": {
+                    "actions": [
+                        {
+                            "type": "link",
+                            "name": "Add to cart",
+                            "uri": "https://example.com"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "button",
+                "tooltip": "button tooltip",
+                "title": "Publish text",
+                "click": {
+                    "actions": [
+                        {
+                            "type": "publishText",
+                            "text": "my text"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "button",
+                "tooltip": "button tooltip",
+                "title": "Navigate",
+                "click": {
+                    "actions": [
+                        {
+                            "type": "publishText",
+                            "text": "my text"
+                        },
+                        {
+                            "type": "navigate",
+                            "name": "Navigate to store via image",
+                            "lo": 23423423,
+                            "la": 2423423423
+                        }
+                    ]
+                }
+            }
+        ]
+    };
+
+    const list = {
+        "type": "vertical",
+        "@type": "list",
+        "@version": "1.0",//TODO: replace
+        "elements": [
+            {
+                "type": "text",
+                "text": "Section",
+                "tooltip": "text tooltip",
+                "style": {
+                    "bold": true,
+                    "size": "large"
+                }
+            },
+            {
+                "type": "horizontal",
+                "elements": [
+                    {
+                        "type": "image",
+                        "url": "https://cdn.macrumors.com/article-new/2017/09/iphonexfrontback-800x573.jpg",
+                        "tooltip": "image tooltip",
+                        "click": {
+                            "actions": [
+                                {
+                                    "type": "publishText",
+                                    "text": "my text"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "vertical",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "product name (Title)",
+                                "tooltip": "text tooltip",
+                                "style": {
+                                    "bold": true,
+                                    "size": "large"
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": "product name (Title)",
+                                "tooltip": "text tooltip"
+                            }
+                        ]
+                    },
+                ]
+            },
+            {
+                "type": "horizontal",
+                "elements": [
+                    {
+                        "type": "image",
+                        "url": "https://cdn.macrumors.com/article-new/2017/09/iphonexfrontback-800x573.jpg",
+                        "tooltip": "image tooltip",
+                        "click": {
+                            "actions": [
+                                {
+                                    "type": "navigate",
+                                    "name": "Navigate to store via image",
+                                    "lo": 23423423,
+                                    "la": 2423423423
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "vertical",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "product name (Title)",
+                                "tooltip": "text tooltip",
+                                "style": {
+                                    "bold": true,
+                                    "size": "large"
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": "product name (Title)",
+                                "tooltip": "text tooltip"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "Section 2",
+                "tooltip": "text tooltip",
+                "style": {
+                    "bold": true,
+                    "size": "large"
+                }
+            },
+            {
+                "type": "horizontal",
+                "elements": [
+                    {
+                        "type": "image",
+                        "url": "https://cdn.macrumors.com/article-new/2017/09/iphonexfrontback-800x573.jpg",
+                        "tooltip": "image tooltip",
+                        "click": {
+                            "actions": [
+                                {
+                                    "type": "navigate",
+                                    "name": "Navigate to store via image",
+                                    "lo": 23423423,
+                                    "la": 2423423423
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "vertical",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "product name (Title)",
+                                "tooltip": "text tooltip",
+                                "style": {
+                                    "bold": true,
+                                    "size": "large"
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": "product name (Title)",
+                                "tooltip": "text tooltip"
+                            }
+                        ]
+                    }
+                ]
+            },
+        ]
+    };
+    const rooEl = JsonPollock.render(card);
+    document.getElementById('container').appendChild(rooEl);
+
+    document.getElementById('container2').appendChild(JsonPollock.render(list));
+
+</script>
+
+</body>
+</html>
