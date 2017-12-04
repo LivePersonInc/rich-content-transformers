@@ -15,6 +15,8 @@
     });
     const card = {
         "type": "vertical",
+        "tag": "card",
+        "tagVersion": "1.0",
         "elements": [
             {
                 "type": "image",
@@ -95,15 +97,15 @@
 
     const list = {
         "type": "vertical",
-        "@type": "list",
-        "@version": "1.0",//TODO: replace
-        "elements": [
+        "tag": "list",
+        "tagVersion": "1.0",
+        "elements": [ // Sections
             {
-                "type": "vertical",
+                "type": "vertical", // Section
                 "elements": [
                     {
-                        "type": "text",
-                        "text": "Section",
+                        "type": "text", //Section title
+                        "text": "iPhones",
                         "tooltip": "text tooltip",
                         "style": {
                             "bold": true,
@@ -111,28 +113,21 @@
                         }
                     },
                     {
-                        "type": "horizontal",
+                        "type": "horizontal", // Item
                         "elements": [
                             {
                                 "type": "image",
                                 "url": "https://cdn.macrumors.com/article-new/2017/09/iphonexfrontback-800x573.jpg",
-                                "tooltip": "image tooltip",
-                                "click": {
-                                    "actions": [
-                                        {
-                                            "type": "publishText",
-                                            "text": "my text"
-                                        }
-                                    ]
-                                }
+                                "tooltip": "iPhone X"
                             },
                             {
                                 "type": "vertical",
                                 "elements": [
                                     {
                                         "type": "text",
-                                        "text": "product name (Title)",
-                                        "tooltip": "text tooltip",
+                                        "tag": "title",
+                                        "text": "iPhone X",
+                                        "tooltip": "Title",
                                         "style": {
                                             "bold": true,
                                             "size": "large"
@@ -140,21 +135,25 @@
                                     },
                                     {
                                         "type": "text",
-                                        "text": "product name (Title)",
-                                        "tooltip": "text tooltip"
+                                        "tag": "subtitle",
+                                        "text": "Black",
+                                        "tooltip": "Black"
                                     },
                                     {
                                         "type": "button",
-                                        "tooltip": "button tooltip",
+                                        "tooltip": "Add to cart",
                                         "title": "Add to cart",
                                         "click": {
                                             "actions": [
                                                 {
-                                                    "type": "link",
-                                                    "name": "Add to cart",
-                                                    "uri": "https://example.com"
+                                                    "type": "publishText",
+                                                    "text": "iPhone X Added"
                                                 }
-                                            ]
+                                            ],
+                                            "metadata": [{ // Item Identifier [optional]
+                                                "type": "ExternalId",
+                                                "id": "iPhone X"
+                                            }]
                                         }
                                     }
                                 ]
@@ -162,30 +161,21 @@
                         ]
                     },
                     {
-                        "type": "horizontal",
+                        "type": "horizontal", // Item
                         "elements": [
                             {
                                 "type": "image",
-                                "url": "https://cdn.macrumors.com/article-new/2017/09/iphonexfrontback-800x573.jpg",
-                                "tooltip": "image tooltip",
-                                "click": {
-                                    "actions": [
-                                        {
-                                            "type": "navigate",
-                                            "name": "Navigate to store via image",
-                                            "lo": 23423423,
-                                            "la": 2423423423
-                                        }
-                                    ]
-                                }
+                                "url": "https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone8/gold/iphone8-gold-select-2017?wid=470&hei=556&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1504041012369",
+                                "tooltip": "iPhone 8"
                             },
                             {
                                 "type": "vertical",
                                 "elements": [
                                     {
                                         "type": "text",
-                                        "text": "product name (Title)",
-                                        "tooltip": "text tooltip",
+                                        "tag": "title",
+                                        "text": "iPhone 8",
+                                        "tooltip": "iPhone 8",
                                         "style": {
                                             "bold": true,
                                             "size": "large"
@@ -193,21 +183,25 @@
                                     },
                                     {
                                         "type": "text",
-                                        "text": "product name (Title)",
-                                        "tooltip": "text tooltip"
+                                        "tag": "subtitle",
+                                        "text": "Rose Gold",
+                                        "tooltip": "Rose Gold"
                                     },
                                     {
                                         "type": "button",
-                                        "tooltip": "button tooltip",
+                                        "tooltip": "Add to cart",
                                         "title": "Add to cart",
                                         "click": {
                                             "actions": [
                                                 {
-                                                    "type": "link",
-                                                    "name": "Add to cart",
-                                                    "uri": "https://example.com"
+                                                    "type": "publishText",
+                                                    "text": "iPhone 8 Added"
                                                 }
-                                            ]
+                                            ],
+                                            "metadata": [{ // Item Identifier [optional]
+                                                "type": "ExternalId",
+                                                "id": "iPhone 8"
+                                            }]
                                         }
                                     }
                                 ]
@@ -217,42 +211,33 @@
                 ],
             },
             {
-                "type": "vertical",
+                "type": "vertical", // Section
                 "elements": [
                     {
-                        "type": "text",
-                        "text": "Section 2",
-                        "tooltip": "text tooltip",
+                        "type": "text", // Section title
+                        "text": "iPads",
+                        "tooltip": "iPads",
                         "style": {
                             "bold": true,
                             "size": "large"
                         }
                     },
                     {
-                        "type": "horizontal",
+                        "type": "horizontal", // Item
                         "elements": [
                             {
                                 "type": "image",
-                                "url": "https://cdn.macrumors.com/article-new/2017/09/iphonexfrontback-800x573.jpg",
-                                "tooltip": "image tooltip",
-                                "click": {
-                                    "actions": [
-                                        {
-                                            "type": "navigate",
-                                            "name": "Navigate to store via image",
-                                            "lo": 23423423,
-                                            "la": 2423423423
-                                        }
-                                    ]
-                                }
+                                "url": "https://brain-images-ssl.cdn.dixons.com/0/4/10165840/u_10165840.jpg",
+                                "tooltip": "iPad Pro"
                             },
                             {
                                 "type": "vertical",
                                 "elements": [
                                     {
                                         "type": "text",
-                                        "text": "product name (Title)",
-                                        "tooltip": "text tooltip",
+                                        "tag": "title",
+                                        "text": "iPad Pro",
+                                        "tooltip": "iPad Pro",
                                         "style": {
                                             "bold": true,
                                             "size": "large"
@@ -260,21 +245,25 @@
                                     },
                                     {
                                         "type": "text",
-                                        "text": "product name (Title)",
-                                        "tooltip": "text tooltip"
+                                        "tag": "subtitle",
+                                        "text": "Space Grey",
+                                        "tooltip": "Space Grey"
                                     },
                                     {
                                         "type": "button",
-                                        "tooltip": "button tooltip",
+                                        "tooltip": "Add to cart",
                                         "title": "Add to cart",
                                         "click": {
                                             "actions": [
                                                 {
-                                                    "type": "link",
-                                                    "name": "Add to cart",
-                                                    "uri": "https://example.com"
+                                                    "type": "publishText",
+                                                    "text": "iPad Pro Added"
                                                 }
-                                            ]
+                                            ],
+                                            "metadata": [{ // Item Identifier [optional]
+                                                "type": "ExternalId",
+                                                "id": "iPad Pro"
+                                            }]
                                         }
                                     }
                                 ]
@@ -291,7 +280,7 @@
     document.getElementById('container2').appendChild(JsonPollock.render(list));
     const linkCallback = (data) => {
         //data => {actionData: <action configuration>, metadata: <metadata configuration, if given>}
-        window.open(data.actionData.uri,"_blank")
+        window.open(data.actionData.uri, "_blank")
     };
     JsonPollock.registerAction('link', linkCallback);
 
